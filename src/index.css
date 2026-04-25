@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-headline: var(--font-headline-family, "Helvetica Neue", Arial, sans-serif);
+  --font-body: var(--font-body-family, "Helvetica Neue", Arial, sans-serif);
+  --font-label: var(--font-body-family, "Helvetica Neue", Arial, sans-serif);
+
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+  --color-primary-container: var(--primary-container);
+  --color-on-primary-container: var(--on-primary-container);
+  
+  --color-success: var(--success);
+  --color-error: var(--error);
+
+  --color-secondary: var(--secondary);
+  --color-on-secondary: var(--on-secondary);
+  --color-secondary-container: var(--secondary-container);
+  --color-on-secondary-container: var(--on-secondary-container);
+  
+  --color-surface: var(--surface);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-outline-variant: var(--outline-variant);
+
+  --font-size-base: var(--base-font-size, 1rem);
+}
+
+:root {
+  --primary: #0047AB; /* Deep Cobalt Blue */
+  --on-primary: #FFFFFF;
+  --primary-container: #001A4D; /* Navy Container */
+  --on-primary-container: #FFFFFF;
+  
+  --success: #15803D;
+  --error: #DC2626;
+
+  --secondary: #475569;
+  --on-secondary: #FFFFFF;
+  --secondary-container: #F1F5F9;
+  --on-secondary-container: #1E293B;
+
+  --surface: #FAF9F6; /* Off-white */
+  --surface-container-low: #fefef4; /* Cream */
+  --surface-container-high: #F2F0E6; /* Slightly darker cream/off-white variant */
+  --surface-container-highest: #E8E6D9;
+  --surface-container-lowest: #FFFFFF;
+  --on-surface: #000033; /* Deep Navy for text */
+  --on-surface-variant: #333366; /* Navy variant for secondary text */
+  --outline-variant: #E8E6D9;
+}
+
+.dark {
+  --primary: #80AFFF; /* Lighter Cobalt for readability on dark backgrounds */
+  --on-primary: #000033;
+  --primary-container: #001A4D;
+  --on-primary-container: #FAF9F6;
+
+  --success: #4ADE80;
+  --error: #F87171;
+
+  --secondary: #94A3B8;
+  --on-secondary: #0F172A;
+  --secondary-container: #1E293B;
+  --on-secondary-container: #F1F5F9;
+
+  --surface: #000033; /* Deep Navy Surface */
+  --surface-container-low: #00001A; /* Darker Navy */
+  --surface-container-high: #001A4D;
+  --surface-container-highest: #002B7F;
+  --surface-container-lowest: #00000D;
+  --on-surface: #eaf7fb; /* Cream text for visibility */
+  --on-surface-variant: #FAF9F6; /* Off-white for secondary text */
+  --outline-variant: #002B7F;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-body;
+    font-size: var(--font-size-base);
+  }
+}
+
+.bento-card {
+  @apply bg-surface-container-low border border-outline-variant rounded-[24px] p-6 transition-all duration-300;
+}
+
+.bento-card:hover {
+  @apply border-primary ring-1 ring-primary/20 shadow-lg;
+}
+
+.bento-label {
+  @apply text-[11px] uppercase tracking-[0.1em] text-on-surface-variant font-semibold mb-2;
+}
+
+.bento-title {
+  @apply text-2xl font-bold tracking-tight text-on-surface leading-tight;
+}
+
+.status-dot {
+  @apply w-2 h-2 rounded-full inline-block mr-2 ring-4 ring-success/20 bg-success;
+  box-shadow: 0 0 12px var(--color-success);
+}
+
+.primary-gradient {
+  background: linear-gradient(135deg, #0047AB 0%, #000080 100%);
+}
+
+.glass-panel {
+  @apply bg-surface/70 backdrop-blur-[20px];
+}
+
+

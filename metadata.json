@@ -1,0 +1,6 @@
+{
+  "name": "2Day I Worked",
+  "description": "All-in-one financial, compliance, and fleet management dashboard for independent professionals.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": []
+}
